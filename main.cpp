@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     //    setlocale(LC_ALL, "Russian");
 
-    float number_1, number_2, result = 0;
+    long double number_1, number_2, result = 0;
     char action;
 
     cout << "Please enter the action ( /, *, +, -, d) : ";
@@ -45,7 +45,7 @@ int main() {
                 return 10;
             }
             if (number_2 <= 1000) {
-                float counter = 0;
+                float counter = 1;
                 result = number_1;
 
                 while (counter < number_2) {
@@ -59,7 +59,7 @@ int main() {
             return 5;
     }
 
-    cout << result << endl;
+    cout << fixed << result << endl;
 
     return 0;
 }
