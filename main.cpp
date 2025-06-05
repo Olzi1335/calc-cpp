@@ -19,6 +19,7 @@ int main() {
         double number_1, number_2, result = 0.1f;
         char command;
         bool help = false;
+        bool command_correct = true;
 
         cout << "Please enter the command ('h' for help) : ";
         cin >> command;
@@ -88,7 +89,7 @@ int main() {
 
                 if (number_2 >= 1001) {
                     cout << number_2 << " is too large";
-                    return 10;
+                    return 1;
                 }
                 if (number_2 <= 1000) {
                     float counter = 1;
@@ -111,10 +112,12 @@ int main() {
             << endl;
                 break;
             case 'q': quit = true; break;
-            default: cout << "Invalid input" << endl;
+            default:
+                command_correct = false;
+                cout << "Error: Invalid command\n\n" << endl;
         }
 
-        if (quit || help) {
+        if (quit || help || !command_correct) {
             continue;
         }
 
