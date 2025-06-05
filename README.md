@@ -17,9 +17,7 @@ It supports basic arithmetic operations: addition, subtraction, multiplication, 
    ```bash
    ./calculator
 3. Follow the prompts:
- - Enter the ***first*** number
- - Enter the ***second*** number
- - Choose an operation (`+`, `-`, `*`, `/`)
+  -
 ## Example
   ```
   Please enter the number 1: 12
