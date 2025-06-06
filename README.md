@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Simple C++ Calculator</h1>
 A minimal command-line calculator written in C++.  
-It supports basic arithmetic operations: addition, subtraction, multiplication, and division.
+It supports basic arithmetic operations: addition, subtraction, multiplication, division and exponentiation.
 </div>
 
 ## Features
@@ -9,6 +9,7 @@ It supports basic arithmetic operations: addition, subtraction, multiplication, 
 - Subtraction (`-`)
 - Multiplication (`*`)
 - Division (`/`)
+- Exponentiation (`d`)
 ## Usage
 1. Compile the program:
    ```bash
@@ -16,13 +17,12 @@ It supports basic arithmetic operations: addition, subtraction, multiplication, 
 2. Run it:
    ```bash
    ./calculator
-3. Follow the prompts:
-  -
+3. Follow the prompts
 ## Example
   ```
+  Please enter the command ('h' for help) : *
   Please enter the number 1: 12
   Please enter the number 2: 3
-  Please enter the action ( /, *, +, -) : *
   12 * 3 = 36
   ```
 ## Requirements
