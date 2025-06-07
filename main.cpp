@@ -93,13 +93,13 @@ int main() {
                 cin >> number_2;
                 cout << endl;
 
-                cout << number_1 << " ^ " << number_2 << " = ";
-
                 if (number_2 >= 1001) {
-                    cout << number_2 << " is too large";
+                    cout << "exponent is too large\n";
+                    error = true;
                 }
                 if (number_2 <= 1000) {
                     float counter = 1;
+                    cout << number_1 << " ^ " << number_2 << " = ";
                     result = number_1;
 
                     while (counter < number_2) {
