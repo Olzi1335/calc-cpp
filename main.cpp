@@ -21,7 +21,7 @@ int main() {
         bool command_incorrect = false;
         bool error = false;
         bool result_out = false;
-        double number_1, number_2, result = 0.1f;
+        double num_1, num_2, result = 0.1f;
         char command = '0';
 
         cout << "Please enter the command ('h' for help) : ";
@@ -31,79 +31,79 @@ int main() {
         switch (command) {
             case '+':
                 cout << "Please enter the number 1: ";
-                cin >> number_1;
+                cin >> num_1;
                 cout << endl;
 
                 cout << "Please enter the number 2: ";
-                cin >> number_2;
+                cin >> num_2;
                 cout << endl;
 
-                result = number_1 + number_2;
-                cout << number_1 << " " << command << " " << number_2 << " = ";
+                result = num_1 + num_2;
+                cout << num_1 << " " << command << " " << num_2 << " = ";
                 result_out = true;
                 break;
             case '-':
                 cout << "Please enter the number 1: ";
-                cin >> number_1;
+                cin >> num_1;
                 cout << endl;
 
                 cout << "Please enter the number 2: ";
-                cin >> number_2;
+                cin >> num_2;
                 cout << endl;
 
-                result = number_1 - number_2;
+                result = num_1 - num_2;
                 result_out = true;
                 break;
             case '*':
                 cout << "Please enter the number 1: ";
-                cin >> number_1;
+                cin >> num_1;
                 cout << endl;
 
                 cout << "Please enter the number 2: ";
-                cin >> number_2;
+                cin >> num_2;
                 cout << endl;
 
-                result = number_1 * number_2;
+                result = num_1 * num_2;
                 result_out = true;
                 break;
             case '/':
                 cout << "Please enter the number 1: ";
-                cin >> number_1;
+                cin >> num_1;
                 cout << endl;
 
                 cout << "Please enter the number 2: ";
-                cin >> number_2;
+                cin >> num_2;
                 cout << endl;
 
-                if (number_2 == 0) {
+                if (num_2 == 0) {
                     cout << "Error: Division by zero" << endl;
                     error = true;
                     break;
                 }
 
-                result = number_1 / number_2;
+                result = num_1 / num_2;
                 result_out = true;
                 break;
             case 'd':
                 cout << "Please enter the number: ";
-                cin >> number_1;
+                cin >> num_1;
                 cout << endl;
 
                 cout << "Please enter the exponent: ";
-                cin >> number_2;
+                cin >> num_2;
                 cout << endl;
 
-                if (number_2 >= 1001) {
+                if (num_2 >= 1001) {
                     cout << "exponent is too large\n";
                     error = true;
                 }
-                if (number_2 <= 1000) {
+                if (num_2 <= 1000) {
                     float counter = 1;
-                    cout << number_1 << " ^ " << number_2 << " = ";
-                    result = number_1;
+                    cout << num_1 << " ^ " << num_2 << " = ";
+                    result = num_1;
 
-                    while (counter < number_2) {
-                        result *= number_1;
+                    while (counter < num_2) {
+                        result *= num_1;
                         counter++;
                     }
                 }
