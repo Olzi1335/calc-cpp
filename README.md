@@ -10,6 +10,7 @@ It supports basic arithmetic operations: addition, subtraction, multiplication, 
 - Multiplication (`*`)
 - Division (`/`)
 - Exponentiation (`d`)
+- Random number (`r`)
 ## Usage
 1. Compile the program:
    ```bash
