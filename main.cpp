@@ -30,7 +30,7 @@ int main() {
         cout << endl << endl;
 
         switch (command) {
-            case '+':
+            case '+': {
                 cout << "Please enter the number 1: ";
                 cin >> num_1;
                 cout << endl;
@@ -43,7 +43,8 @@ int main() {
                 cout << num_1 << " " << command << " " << num_2 << " = ";
                 result_out = true;
                 break;
-            case '-':
+            }
+            case '-': {
                 cout << "Please enter the number 1: ";
                 cin >> num_1;
                 cout << endl;
@@ -55,7 +56,8 @@ int main() {
                 result = num_1 - num_2;
                 result_out = true;
                 break;
-            case '*':
+            }
+            case '*': {
                 cout << "Please enter the number 1: ";
                 cin >> num_1;
                 cout << endl;
@@ -67,7 +69,8 @@ int main() {
                 result = num_1 * num_2;
                 result_out = true;
                 break;
-            case '/':
+            }
+            case '/': {
                 cout << "Please enter the number 1: ";
                 cin >> num_1;
                 cout << endl;
@@ -85,7 +88,8 @@ int main() {
                 result = num_1 / num_2;
                 result_out = true;
                 break;
-            case 'd':
+            }
+            case 'd': {
                 cout << "Please enter the number: ";
                 cin >> num_1;
                 cout << endl;
@@ -94,22 +98,29 @@ int main() {
                 cin >> num_2;
                 cout << endl;
 
-                if (num_2 >= 1001) {
-                    cout << "exponent is too large\n";
+                if (num_2 > 1000) {
+                    cout << "Error: Exponent is too large!\n";
                     error = true;
+                    break;
                 }
-                if (num_2 <= 1000) {
-                    float counter = 1;
-                    cout << num_1 << " ^ " << num_2 << " = ";
-                    result = num_1;
+                if (num_1 == 0 || num_2 == 0) {
+                    cout << "Error: Some number is equal to zero!\n";
+                    error = true;
+                    break;
+                }
 
-                    while (counter < num_2) {
-                        result *= num_1;
-                        counter++;
-                    }
+                int counter = 1;
+                cout << num_1 << " ^ " << num_2 << " = ";
+                result = num_1;
+
+                while (counter < num_2) {
+                    result *= num_1;
+                    counter++;
                 }
+
                 result_out = true;
                 break;
+            }
             case 'r': {
                 int random_min_number;
                 cout << "Please enter the minimum number: ";
@@ -121,38 +132,46 @@ int main() {
                 cin >> random_max_number;
                 cout << endl;
 
-                random_device rd;
-                mt19937 gen(rd());
-                uniform_int_distribution<> dist(random_min_number, random_max_number);
+                if (random_max_number < random_min_number) {
+                    cout << "Error: The minimum number is greater than the maximum!\n";
+                    error = true;
+                    break;
+                }
 
-                cout << "Random number: ";
-                result = dist(gen);
-                result_out = true;
-                break;
+                    random_device rd;
+                    mt19937 gen(rd());
+                    uniform_int_distribution<> dist(random_min_number, random_max_number);
+
+                    cout << "Random number: ";
+                    result = dist(gen);
+                    result_out = true;
+                    break;
             }
-            case 'h':
-                help = true;
-                cout << "Enter '+' for addition\n"\
-            << "Enter '-' for subtraction\n"\
-            << "Enter '*' for multiplication\n"\
-            << "Enter '/' for division\n"\
-            << "Enter 'd' for exponentiation (number^exponent)\n"\
-            << "Enter 'r' for random number\n"\
-            << "Enter 'q' for quit"\
-            << endl;
-                break;
-            case 'q': quit = true; break;
-            default:
-                command_incorrect = true;
-                cout << "Error: Invalid command" << endl;
-                break;
-        }
+                case 'h': {
+                    help = true;
+                    cout << "Enter '+' for addition\n"\
+                << "Enter '-' for subtraction\n"\
+                << "Enter '*' for multiplication\n"\
+                << "Enter '/' for division\n"\
+                << "Enter 'd' for exponentiation (number^exponent)\n"\
+                << "Enter 'r' for random number\n"\
+                << "Enter 'q' for quit"\
+                << endl;
+                    break;
+                }
+                case 'q': {quit = true; break;}
+                default: {
+                    command_incorrect = true;
+                    cout << "Error: Invalid command!" << endl;
+                    break;
+                }
+            }
 
         if (quit || help || command_incorrect || error) {
             cout << endl;
             continue;
         }
         if (result_out)
-            cout << fixed << result << endl;
+            cout << fixed << result << endl << endl;
     }
 }
