@@ -80,7 +80,7 @@ int main() {
                 cout << endl;
 
                 if (num_2 == 0) {
-                    cout << "Error: Division by zero" << endl;
+                    cout << "Error: Division by zero!" << endl;
                     error = true;
                     break;
                 }
