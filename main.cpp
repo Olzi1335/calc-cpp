@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <random>
 
 using namespace std;
 
@@ -109,6 +110,26 @@ int main() {
                 }
                 result_out = true;
                 break;
+            case 'r': {
+                int random_min_number;
+                cout << "Please enter the minimum number: ";
+                cin >> random_min_number;
+                cout << endl;
+
+                int random_max_number;
+                cout << "Please enter the maximum number: ";
+                cin >> random_max_number;
+                cout << endl;
+
+                random_device rd;
+                mt19937 gen(rd());
+                uniform_int_distribution<> dist(random_min_number, random_max_number);
+
+                cout << "Random number: ";
+                result = dist(gen);
+                result_out = true;
+                break;
+            }
             case 'h':
                 help = true;
                 cout << "Enter '+' for addition\n"\
@@ -116,6 +137,7 @@ int main() {
             << "Enter '*' for multiplication\n"\
             << "Enter '/' for division\n"\
             << "Enter 'd' for exponentiation (number^exponent)\n"\
+            << "Enter 'r' for random number\n"\
             << "Enter 'q' for quit"\
             << endl;
                 break;
